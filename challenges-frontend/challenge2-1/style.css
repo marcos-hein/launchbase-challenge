@@ -9,7 +9,9 @@
 body {
     background: white;
     font-family: 'Roboto', sans-serif;
-    color: white;
+    color: #201f22;
+
+    text-align: center;
 }
 
 a {
@@ -21,6 +23,7 @@ header {
     background: #7159c1;
     padding: 30px;
     text-align: center;
+    color: white;
 }
 
 header a {
