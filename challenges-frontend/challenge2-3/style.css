@@ -15,8 +15,10 @@ body {
 }
 
 a {
+    font-size: 20px;
     color: white;
     text-decoration: none;
+    margin: 0 16px;
 }
 
 header {
@@ -24,9 +26,8 @@ header {
     padding: 30px;
     text-align: center;
     color: white;
-}
 
-header a {
-    /* margin: 0 30px; */
+    font-size: 18px;
+    line-height: 28px;
 }
 
