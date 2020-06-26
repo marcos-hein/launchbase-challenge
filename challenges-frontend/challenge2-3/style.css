@@ -31,3 +31,30 @@ header {
     line-height: 28px;
 }
 
+/* ===== CARDS ===== */
+
+.cards {
+    max-width: 800px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background-color: #282a36;
+    border: 2px solid #7159c1;
+    border-radius: 20px;
+    padding: 5px 20px;
+    text-align: center;
+}
+
+.card_image-container img {
+    width: 50%px;
+}
+
+.card_content {
+    padding: 24px;
+}
+
+
