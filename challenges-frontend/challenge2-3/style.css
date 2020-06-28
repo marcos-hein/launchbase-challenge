@@ -7,7 +7,7 @@
 }
 
 body {
-    background: white;
+    background: rgb(216, 214, 214);
     font-family: 'Roboto', sans-serif;
     color: #201f22;
 
@@ -35,26 +35,96 @@ header {
 
 .cards {
     max-width: 800px;
-    margin: 30px auto;
+    margin: 100px auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
 
 .card {
-    background-color: #282a36;
+    background-color: #353232;
     border: 2px solid #7159c1;
     border-radius: 20px;
     padding: 5px 20px;
     text-align: center;
 }
 
+
 .card_image-container img {
     width: 50%px;
 }
 
 .card_content {
+    color: white;
     padding: 24px;
 }
 
 
+/* ===== MODAL ===== */
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    margin: 5vh auto;
+    position: relative;
+    display: flex;
+}
+
+.modal a {
+    margin: 0 16px;
+}
+
+.modal .close-modal {
+    color: black;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+}
+
+
+.modal .maximize {
+    color: black;
+    position: absolute;
+    top: 8px;
+    right: 36px;
+    cursor: pointer;
+}
+
+/* ===== MODAL.ACTIVE ===== */
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+iframe {
+    width: 100%;
+    height: 90%;
+    margin: 5vh auto;
+    position: absolute;
+    top: 1%;
+}
+
+/* ===== MODAL.ACTIVE ===== */
+
+.modal.maximize-modal {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    display: flex;
+}
+}
