@@ -49,6 +49,16 @@ header {
     text-align: center;
 }
 
+.card:hover {
+    filter: brightness(60%);
+    transition: 400ms;
+
+    border: 2px solid #6d41fb;
+    border-radius: 20px;
+    
+    cursor: pointer;
+}
+
 
 .card_image-container img {
     width: 50%px;
