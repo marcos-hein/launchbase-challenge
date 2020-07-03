@@ -9,9 +9,12 @@
 body {
     background: rgb(216, 214, 214);
     font-family: 'Roboto', sans-serif;
+    text-align: center;
     color: #201f22;
 
-    text-align: center;
+    position: relative;
+    padding-bottom: 30px;
+    min-height: 100vh;
 }
 
 a {
@@ -30,6 +33,34 @@ header {
     font-size: 18px;
     line-height: 28px;
 }
+
+header a:hover {
+    border-bottom: 1px solid rgb(216, 214, 214);
+    transition: 500ms;
+}
+
+/* ===== FOOTER ===== */
+
+#links-footer {
+    bottom: 0;
+    width: 100%;
+    height: 32px;
+    margin-bottom: 32px;
+}
+
+#links-footer a:hover {
+    border-bottom: 1px solid #7159c1;
+    transition: 500ms;
+    justify-content: center;
+}
+
+#links-footer img {
+    width: 30px;
+    height: auto;
+    margin: 0 16px;
+}
+
+
 
 /* ===== CARDS ===== */
 
@@ -69,7 +100,6 @@ header {
     padding: 24px;
 }
 
-
 /* ===== MODAL ===== */
 
 .modal-overlay {
@@ -89,6 +119,7 @@ header {
     margin: 5vh auto;
     position: relative;
     display: flex;
+    
 }
 
 .modal a {

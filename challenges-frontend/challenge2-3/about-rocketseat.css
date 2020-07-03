@@ -1,16 +1,3 @@
-header {
-    font-family: 'Roboto', sans-serif;
-    font-size: 34px;
-    
-    display: flex;
-    justify-content: center;
-}
-
-header a:hover {
-    border-bottom: 1px solid rgb(216, 214, 214);
-    transition: 500ms;
-}
-
 #content {
     align-content: center;
     margin: 12px 30px;
@@ -62,23 +49,4 @@ header a:hover {
     margin-bottom: 14px;
 
     list-style-type: none;
-}
-
-#links-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 32px;
-}
-
-#links-footer a:hover {
-    border-bottom: 1px solid #7159c1;
-    transition: 500ms;
-    justify-content: center;
-}
-
-#links-footer img {
-    width: 30px;
-    height: auto;
-    margin: 0 16px;
 }
