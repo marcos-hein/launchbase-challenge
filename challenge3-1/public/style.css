@@ -80,7 +80,7 @@ header a:hover {
 }
 
 .card {
-    background-color: #353232;
+    background-color: #1f1d1d;
     border: 2px solid #7159c1;
     border-radius: 20px;
     padding: 5px 20px;
@@ -105,6 +105,18 @@ header a:hover {
 .card_content {
     color: white;
     padding: 24px;
+}
+
+#starter p strong {
+    color: rgb(113, 89, 193);
+}
+
+#launchbase p strong {
+    color: #fd951f;
+}
+
+#gostack p strong {
+    color: #04d361;
 }
 
 /* ===== MODAL ===== */
