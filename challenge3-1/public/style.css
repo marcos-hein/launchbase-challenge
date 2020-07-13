@@ -119,6 +119,53 @@ header a:hover {
     color: #04d361;
 }
 
+/* ===== NOT-FOUND ===== */
+
+.content {
+    color: #7159c1;
+
+    height: 80vh;
+    padding: 50px;
+    display: flex;
+    position: relative;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content #not-found{
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.content #not-found i{
+    font-size: 120px;
+    margin-right: 32px;
+}
+
+.content #error {
+    margin-top: 32px;
+}
+
+.content #error h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.content #error a {
+    background-color: #7159c1;
+    color: #1a1a1b;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.content #error a:hover {
+    color: white;
+    filter: brightness(60%);
+    transition: 400ms;
+}
+
 /* ===== MODAL ===== */
 
 .modal-overlay {
