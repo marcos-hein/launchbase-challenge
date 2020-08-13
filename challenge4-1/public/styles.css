@@ -31,4 +31,24 @@ header {
 .links a {
     text-decoration: none;
     color: #D7E8BA;
+    position: relative;
+}
+
+.links a.active {
+    font-weight: bold;
+}
+
+.links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #D7E8BA;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+}
+
+.links a:hover::after {
+    width: 100%;
+    transition: width 700ms ease-in-out;
 }
