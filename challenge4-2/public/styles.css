@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-color: #073B4C;
+    font-family: 'Roboto', sans-serif;
+    color: #D7E8BA;
+}
+
+header {
+    /* background-color: #073B4C; */
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.links {
+    font-size: 22px;
+}
+
+.links a + a {
+    margin-left: 32px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #D7E8BA;
+    position: relative;
+}
+
+.links a.active {
+    font-weight: bold;
+}
+
+.links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #D7E8BA;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+}
+
+.links a:hover::after {
+    width: 100%;
+    transition: width 700ms ease-in-out;
+}
+
+/* === CARD === */
+
+.card {
+    background-color: white;
+    width: 800px;
+    min-height: 400px;
+
+    margin: 45px auto;
+
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+
+    box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
+
+    opacity: 0;
+    animation: up 200ms ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 400ms;
+}
+
+@keyframes up {
+    from {
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* === DETAILS === */
+
+.details {
+    padding: 32px;
+}
+
+.details .item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .item:first-child {
+    border: none;
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+    font-size: 14px;
+    line-height: 24px;
+    color: #777777;
+    letter-spacing: 0.7px;
+    font-weight: normal;
+}
+
+.details .item div:nth-child(2) {
+    color: #555555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.details h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #073B4C;
+}
+
+.details .item span {
+    padding: 8px 16px;
+    background-color: #D7E8BA;
+    border-radius: 16px;
+    color: #777777;
+    margin-right: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
