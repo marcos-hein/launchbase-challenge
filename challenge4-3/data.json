@@ -1,0 +1,20 @@
+{
+  "teachers": [
+    {
+      "avatar_url": "http://google.com",
+      "name": "Marcos",
+      "birth": "1993-02-01",
+      "select": "2",
+      "type_of_class": "presential",
+      "services": "qwe"
+    },
+    {
+      "avatar_url": "http://google.com",
+      "name": "Vinicius",
+      "birth": "2020-08-12",
+      "select": "2",
+      "type_of_class": "distance",
+      "services": "asdasd, asfasf"
+    }
+  ]
+}
