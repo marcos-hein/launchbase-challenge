@@ -11,11 +11,23 @@ exports.post = function(req, res) {
         }
     }
 
-    req.body.birth = Date.parse(req.body.birth)
+    let { avatar_url, name, birth, select, type_of_class, services } = req.body
 
-    req.body.created_at = Date.now()
+    birth = Date.parse(birth)
+    const created_at = Date.now()
+    const id = Number(data.teachers.length + 1)
 
-    data.teachers.push(req.body)
+
+    data.teachers.push({
+        id,
+        avatar_url,
+        name,
+        birth,
+        select,
+        type_of_class,
+        services,
+        created_at
+    })
 
     fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err) {
         if (err) {

@@ -1,22 +1,14 @@
 {
   "teachers": [
     {
-      "avatar_url": "http://google.com",
-      "name": "marcão",
-      "birth": "1992-03-31",
-      "select": "1",
-      "type_of_class": "distance",
-      "services": "asd, dsa",
-      "created_at": 1598209450898
-    },
-    {
+      "id": 1,
       "avatar_url": "http://google.com",
       "name": "marcão",
       "birth": 702000000000,
       "select": "1",
-      "type_of_class": "distance",
+      "type_of_class": "presential",
       "services": "asd, dsa",
-      "created_at": 1598209579270
+      "created_at": 1598210560302
     }
   ]
 }
