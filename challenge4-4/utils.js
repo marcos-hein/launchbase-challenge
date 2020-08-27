@@ -29,4 +29,14 @@ module.exports = {
 
         return schooling[position]
     },
+    date: function(timestamp){
+        const date = new Date(timestamp)
+
+        const year = date.getFullYear()
+        const month = `${date.getMonth() + 1}`.slice(-2)
+        const day = `${date.getDate() + 1}`.slice(-2)
+
+        
+        return `${year}-${month}-${day}`
+    }
 }

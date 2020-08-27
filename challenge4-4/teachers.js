@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('./data.json')
-const { age, graduation } = require('./utils')
+const { age, graduation, date } = require('./utils')
 
 // create
 exports.post = function(req, res) {
@@ -75,7 +75,7 @@ exports.edit = function(req, res) {
 
     const teacher = {
         ...foundTeacher,
-        birth: ''
+        birth: date(foundTeacher.birth)
     }
 
 

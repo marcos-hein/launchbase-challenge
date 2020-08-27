@@ -36,12 +36,12 @@
 <div class="item">
     <div>Escolaridade</div>
     <div>
-        <select name="scholarity">
+        <select name="schooling">
             <option value="0">Selecione uma opção</option>
-            <option value="1">Ensino Médio Completo</option>
-            <option value="2">Ensino Superior Completo</option>
-            <option value="3">Mestrado</option>
-            <option value="4">Doutorado</option>
+            <option value="1" {% if teacher.schooling == '1' %} selected{% endif %}>Ensino Médio Completo</option>
+            <option value="2" {% if teacher.schooling == '2' %} selected{% endif %}>Ensino Superior Completo</option>
+            <option value="3" {% if teacher.schooling == '3' %} selected{% endif %}>Mestrado</option>
+            <option value="4" {% if teacher.schooling == '4' %} selected{% endif %}>Doutorado</option>
         </select>
     </div>
 </div>
