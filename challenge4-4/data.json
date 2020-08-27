@@ -1,0 +1,34 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "https://source.unsplash.com/collection/430456/500x500",
+      "name": "marcão",
+      "birth": 702000000000,
+      "schooling": "1",
+      "type_of_class": "Presencial",
+      "services": "asd, dsa",
+      "created_at": 1598210560302
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://source.unsplash.com/collection/430456/500x500",
+      "name": "Vinicius",
+      "birth": 751075200000,
+      "schooling": "1",
+      "type_of_class": "Á distância",
+      "services": "Matemática, Fisíca",
+      "created_at": 1598488153997
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://source.unsplash.com/collection/430456/500x500",
+      "name": "Vinicius Hein",
+      "birth": 746323200000,
+      "schooling": "1",
+      "type_of_class": "Presencial",
+      "services": "Matemática, Fisíca",
+      "created_at": 1598488192313
+    }
+  ]
+}
