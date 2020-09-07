@@ -2,6 +2,18 @@ const fs = require('fs')
 const data = require('./data.json')
 const { age, graduation, date } = require('./utils')
 
+exports.index = function(req, res){
+    const teachers = data.teachers.map(function(teacher) {
+        return {
+            ...teacher,
+            services: teacher.services.split(","),
+
+        }
+    })
+
+    return res.render('teachers/teachers', { teachers })
+}
+
 // create
 exports.post = function(req, res) {
 
