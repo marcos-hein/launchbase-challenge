@@ -1,0 +1,54 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "https://source.unsplash.com/collection/430456/500x500",
+      "name": "Marcos Vinicius Hein Pereira",
+      "birth": 731376000000,
+      "schooling": "4",
+      "type_of_class": "Á distância",
+      "services": "Crossfit",
+      "created_at": 1598210560302
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://source.unsplash.com/collection/430456/500x500",
+      "name": "Vinicius",
+      "birth": 751075200000,
+      "schooling": "1",
+      "type_of_class": "Á distância",
+      "services": "Matemática, Fisíca",
+      "created_at": 1598488153997
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://source.unsplash.com/collection/430456/500x500",
+      "name": "Vinicius Hein",
+      "birth": 746323200000,
+      "schooling": "4",
+      "type_of_class": "Presencial",
+      "services": "Matemática, Fisíca",
+      "created_at": 1598488192313
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://source.unsplash.com/collection/430456/500x500",
+      "name": "Camila",
+      "birth": 751680000000,
+      "schooling": "3",
+      "type_of_class": "Presencial",
+      "services": "Biologia",
+      "created_at": 1598571515834
+    },
+    {
+      "id": 5,
+      "avatar_url": "https://source.unsplash.com/collection/430456/500x500",
+      "name": "Vinicius Hein",
+      "birth": 751075200000,
+      "schooling": "1",
+      "type_of_class": "Á distância",
+      "services": "Programação",
+      "created_at": 1598571553548
+    }
+  ]
+}
