@@ -15,6 +15,11 @@ exports.index = function(req, res){
 }
 
 // create
+exports.create = function(req, res) {
+    return res.render('teachers/create-teacher')
+}
+
+// post
 exports.post = function(req, res) {
 
     const keys = Object.keys(req.body)
