@@ -16,8 +16,20 @@
         <input 
             type="text"
             name="name"
-            placeholder="Nome do professor"
+            placeholder="Nome do estudante"
             value="{{ student.name }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Email</div>
+    <div>
+        <input 
+            type="email"
+            name="email"
+            placeholder="seuemail@email.com"
+            value="{{ student.email }}"
         >
     </div>
 </div>
@@ -29,6 +41,35 @@
             type="date"
             name="birth"
             value="{{ student.birth }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Ano escolar</div>
+    <div>
+        <select name="school-year">
+            <option value="0">Selecione uma opção</option>
+            <option value="1" {% if student.school-year == '1' %} selected{% endif %}>5º ano, Ensino Fundamental</option>
+            <option value="2" {% if student.school-year == '2' %} selected{% endif %}>6º ano, Ensino Fundamental</option>
+            <option value="3" {% if student.school-year == '3' %} selected{% endif %}>7º ano, Ensino Fundamental</option>
+            <option value="4" {% if student.school-year == '4' %} selected{% endif %}>8º ano, Ensino Fundamental</option>
+            <option value="5" {% if student.school-year == '5' %} selected{% endif %}>9º ano, Ensino Fundamental</option>
+            <option value="6" {% if student.school-year == '6' %} selected{% endif %}>1º ano, Ensino Médio</option>
+            <option value="7" {% if student.school-year == '7' %} selected{% endif %}>2º ano, Ensino Médio</option>
+            <option value="8" {% if student.school-year == '8' %} selected{% endif %}>5º ano, Ensino Médio</option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Carga horária</div>
+    <div>
+        <input 
+            type="number"
+            name="study-hours"
+            placeholder="Horas por semana"
+            value="{{ student.study-hours }}"
         >
     </div>
 </div>
