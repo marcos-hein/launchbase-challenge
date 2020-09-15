@@ -1,5 +1,24 @@
 {
-  "students": [],
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "http://google.com",
+      "name": "Marcos",
+      "email": "marcos@vini.com",
+      "birth": 917827200000,
+      "school_year": "6",
+      "study_hours": "20"
+    },
+    {
+      "id": 2,
+      "avatar_url": "http://google.com",
+      "name": "Marquin",
+      "email": "marqui100%@rbd.com",
+      "birth": 1013472000000,
+      "school_year": "1",
+      "study_hours": "13"
+    }
+  ],
   "teachers": [
     {
       "id": 1,

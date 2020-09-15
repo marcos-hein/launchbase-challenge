@@ -5,9 +5,7 @@ const { age, graduation, date } = require('../utils')
 exports.index = function(req, res){
     const students = data.students.map(function(student) {
         return {
-            ...student,
-            services: student.services.split(","),
-
+            ...student
         }
     })
 
@@ -30,16 +28,20 @@ exports.post = function(req, res) {
         }
     }
 
-    let { avatar_url, name, birth} = req.body
+    let { avatar_url, name, email, birth, school_year, study_hours} = req.body
 
     birth = Date.parse(birth)
-    const id = Number(data.students.length + 1)
 
+    let id = 1
+    const lastStudent = data.students[data.students.length - 1]
 
+    if (lastStudent) {
+        id = Number(lastStudent.id) + 1
+    }
+    
     data.students.push({
         id,
-        avatar_url,
-        name,
+        ...req.body,
         birth
     })
 

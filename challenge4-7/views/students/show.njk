@@ -12,32 +12,23 @@
             </div>
 
             <div class="item">
+                <div>Email</div>
+                <div>{{ student.email }}</div>
+            </div>
+
+            <div class="item">
                 <div>Idade</div>
                 <div>{{ student.age }}</div>
             </div>
 
             <div class="item">
-                <div>Escolaridade</div>
-                <div>{{ student.schooling }}</div>
+                <div>Ano escolar</div>
+                <div>{{ student.school_year }}</div>
             </div>
 
             <div class="item">
-                <div>Modalidade de ensino</div>
-                <div>{{ student.type_of_class }}</div>
-            </div>
-
-            <div class="item">
-                <div>Acompanhamento</div>
-                <div>
-                    {% for service in student.services %}
-                        <span class="service">{{ service }}</span>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="item">
-                <div>Desde</div>
-                <div>{{ student.created_at }}</div>
+                <div>Carga horária</div>
+                <div>{{ student.study_hours }}</div>
             </div>
 
             <div class="button_show_page">
