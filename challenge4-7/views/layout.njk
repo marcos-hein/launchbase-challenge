@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        
+    <head> 
         {% block head %}    
             <title>Teach.me</title>
         {% endblock head %}
@@ -14,14 +13,16 @@
         
         <header>
             <div class="links">
-                <a href="/" class="active">Teachers</a>
-                <a href="/Students">Students</a>
+                <a href="/teachers">Teachers</a>
+                <a href="/students">Students</a>
             </div>
         </header>
         
         <div class="background-image">
             {% block content %}{% endblock content %}
         </div>
+
+        <script src="/scripts.js"></script>
     </body>
 
 
