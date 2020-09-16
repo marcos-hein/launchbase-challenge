@@ -222,12 +222,6 @@ a.button {
     text-decoration: none;
 }
 
-.button_show_page {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-}
-
 #form-delete button[type="submit"] {
     background-color: crimson;
 
@@ -303,13 +297,6 @@ tbody tr td:last-child a:hover {
 
 td:last-child {
     text-align: center;
-}
-
-.table-container a {
-    /* display: inline-flex; */
-    
-
-    padding: 16px;
 }
 
 .table-container img {

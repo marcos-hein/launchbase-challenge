@@ -31,19 +31,8 @@
                 <div>{{ student.study_hours }}</div>
             </div>
 
-            <div class="button_show_page">
-
-                <a href="/students/{{ student.id }}/edit" class="button button_show_page">Editar</a>
-
-                <form id="form-delete" method="POST" action="/students?_method=DELETE">
-                    <input 
-                        type="hidden"
-                        name="id"
-                        value="{{ student.id }}"
-                    >
-                    <button class="button_show_page" type="submit">Deletar</button>
-                </form>
-            </div>
+            <a href="/students/{{ student.id }}/edit" class="button button_show_page">Editar</a>
+            
         </section>
     </div>
 {% endblock content %}

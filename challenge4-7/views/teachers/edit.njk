@@ -5,7 +5,7 @@
     <div class="card edit">
         <section
             class="avatar" 
-            style ="background: url(https://source.unsplash.com/collection/430456/500x500) no-repeat center center / cover">
+            style ="background: url({{ teacher.avatar_url }}) no-repeat center center / cover">
         </section>
 
         <section class="details">
@@ -23,6 +23,18 @@
 
             </form>
 
+            <form id="form-delete" method="POST" action="/teachers?_method=DELETE">
+                    <input 
+                        type="hidden"
+                        name="id"
+                        value="{{ teacher.id }}"
+                    >
+                    <button class="button_show_page" type="submit">Deletar</button>
+            </form>
+
         </section>
     </div>
+
+{% include '../confirm-delete.njk' %}
+
  {% endblock content %}

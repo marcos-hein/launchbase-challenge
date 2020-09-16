@@ -5,24 +5,39 @@
     <div class="card edit">
         <section
             class="avatar" 
-            style ="background: url(https://source.unsplash.com/collection/430456/500x500) no-repeat center center / cover">
+            style ="background: url({{ student.avatar_url}}) no-repeat center center / cover">
         </section>
 
         <section class="details">
-            <form method="POST" action="/students?_method=PUT">
-                
-                <h3>Editar Estudante</h3>
+            <div class="show_edit_page">
+                <form method="POST" action="/students?_method=PUT">
+                    
+                    <h3>Editar Estudante</h3>
 
-                {% include 'students/fields.njk' %}
+                    {% include 'students/fields.njk' %}
 
-                <input 
-                    type="hidden" 
-                    name="id" 
-                    value="{{ student.id }}"
-                >
+                    <input 
+                        type="hidden" 
+                        name="id" 
+                        value="{{ student.id }}"
+                    >
 
-            </form>
+                </form>
+
+                <form id="form-delete" method="POST" action="/students?_method=DELETE">
+                        <input 
+                            type="hidden"
+                            name="id"
+                            value="{{ student.id }}"
+                        >
+                        <button class="delete_button" type="submit">Deletar</button>
+                </form>
+
+            </div>
 
         </section>
     </div>
+
+{% include '../confirm-delete.njk' %}
+
  {% endblock content %}
