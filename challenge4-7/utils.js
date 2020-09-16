@@ -1,12 +1,5 @@
 const { timeStamp } = require("console")
 
-const schooling = [
-    "Ensino Médio Completo",
-    "Ensino Superior Completo",
-    "Mestrado",
-    "Doutorado"
-]
-
 module.exports = {
     age: function(timestamp) {
         const today = new Date()
@@ -25,18 +18,46 @@ module.exports = {
 
     },
     graduation: function(schoolingNumber) {
+        const schooling = [
+            "Ensino Médio Completo",
+            "Ensino Superior Completo",
+            "Mestrado",
+            "Doutorado"
+        ]
+
         const position = schoolingNumber - 1
 
         return schooling[position]
     },
+    grade: function(schoolYear) {
+        const schoolYears = {
+            1: "5º Ano do Ensino Fundamental",
+            2: "6º Ano do Ensino Fundamental",
+            3: "7º Ano do Ensino Fundamental",
+            4: "8º Ano do Ensino Fundamental",
+            5: "9º Ano do Ensino Fundamental",
+            6: "1º Ano do Ensino Médio",
+            7: "2º Ano do Ensino Médio",
+            8: "3º Ano do Ensino Médio",
+        }
+
+        for (const option in schoolYears) {
+            if (option == schoolYear) {
+                return schoolYears[option];   
+            }
+        }  
+    },
     date: function(timestamp){
         const date = new Date(timestamp)
 
-        const year = date.getFullYear()
-        const month = `0${date.getMonth() + 1}`.slice(-2)
-        const day = `0${date.getDate() + 1}`.slice(-2)
+        const year = date.getUTCFullYear()
+        const month = `0${date.getUTCMonth() + 1}`.slice(-2)
+        const day = `0${date.getUTCDate() + 1}`.slice(-2)
 
         
-        return `${year}-${month}-${day}`
+        return {
+            iso:`${year}-${month}-${day}`,
+            birthDay: `${day}/${month}`
+        }
     }
 }
