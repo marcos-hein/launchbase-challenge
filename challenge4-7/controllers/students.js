@@ -5,7 +5,8 @@ const { age, grade, date } = require('../utils')
 exports.index = function(req, res){
     const students = data.students.map(function(student) {
         return {
-            ...student
+            ...student,
+            school_year: grade(student.school_year)
         }
     })
 

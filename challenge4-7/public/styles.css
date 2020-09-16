@@ -252,6 +252,7 @@ button[type="submit"]:hover,
 td, th {
     padding: 12px;
     border-bottom: 1px solid #d9d9d9;
+    text-align: center;
 }
 
 th {
@@ -268,6 +269,7 @@ tbody tr td:first-child {
     display: grid;
     grid-template-columns: 56px 1fr;
     align-items: center;
+    text-align: initial;
 }
 
 tbody tr td:first-child span {
