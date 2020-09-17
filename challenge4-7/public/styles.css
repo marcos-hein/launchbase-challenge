@@ -189,7 +189,7 @@ input {
 
 input[type="radio"] {
     width: initial;
-    margin-right: 4px;
+    margin-left: 8px;
 }
 
 input::placeholder {
@@ -204,7 +204,7 @@ select {
     font-size: 18px;
 }
 
-button[type="submit"],
+/* button[type="submit"],
 a.button {
     padding: 8px 32px;
     background-color: var(--primary-color);
@@ -213,9 +213,32 @@ a.button {
     margin-top: 32px;
     width: 100%;
     font-size: 16px;
+} */
+
+button[type="submit"],
+a.button {
+    background-color: #eeeeee;
+    color: var(--primary-color);
+    width: 100%;
+    padding: 8px 32px;
+    margin-top: 32px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button[type="submit"] {
+    float: left;
+    width: 40%;
+    margin-left: 24px;
 }
 
 a.button {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
     box-sizing: border-box;
     text-align: center;
@@ -223,19 +246,37 @@ a.button {
 }
 
 #form-delete button[type="submit"] {
-    background-color: crimson;
+    background-color: white;
+    color: #ed4b6a;
+    border: 2px solid #ed4b6a;
 
-    display: block;
     box-sizing: border-box;
     padding: 9px 16px;
 }
 
-button[type="submit"]:hover,
+/* button[type="submit"]:hover,
 .button_show_page a:hover {
     cursor: pointer;
     filter: brightness(85%);
     transition: 400ms;
+} */
+
+button[type="submit"]:hover,
+a.button:hover {
+    /* background-color: var(--primary-color); */
+    color: white;
+    box-shadow: 0 0 40px 40px var(--primary-color) inset;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
 }
+
+#form-delete button[type="submit"]:hover {
+    color: white;
+    box-shadow: 0 0 40px 40px #ed4b6a inset;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+
 
 /* TEACHER LISTING */
 
