@@ -1,0 +1,34 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    <div class="card table-container">
+        <a class="add-user" href="/teachers/create">
+            <img class="add-user" src="/assets/person_add-white.svg" alt="Adicionar usuário"> 
+        </a>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Nome completo</th>
+                    <th>Acompanhamento</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for teacher in teachers %}
+                    <tr>
+                        <td>
+                            <span style="background-image: url({{ teacher.avatar_url }})"></span>
+                            {{ teacher.name }}
+                        </td>
+                        <td>
+                            {% for service in teacher.services %}
+                                <span class="service">{{ service }}</span>
+                            {% endfor %}
+                        </td>
+                        <td><a href="/teachers/{{teacher.id}}">Ver</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
