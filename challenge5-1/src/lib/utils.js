@@ -1,7 +1,7 @@
 const { timeStamp } = require("console")
 
 module.exports = {
-    age: function(timestamp) {
+    age(timestamp) {
         const today = new Date()
         const birthDate = new Date(timestamp)
 
@@ -17,7 +17,7 @@ module.exports = {
         return age
 
     },
-    graduation: function(schoolingNumber) {
+    graduation(schoolingNumber) {
         const schooling = [
             "Ensino Médio Completo",
             "Ensino Superior Completo",
@@ -29,7 +29,7 @@ module.exports = {
 
         return schooling[position]
     },
-    grade: function(schoolYear) {
+    grade(schoolYear) {
         const schoolYears = {
             1: "5º Ano do Ensino Fundamental",
             2: "6º Ano do Ensino Fundamental",
@@ -47,7 +47,7 @@ module.exports = {
             }
         }  
     },
-    date: function(timestamp){
+    date(timestamp){
         const date = new Date(timestamp)
 
         const year = date.getUTCFullYear()
@@ -61,5 +61,3 @@ module.exports = {
         }
     }
 }
-
-// teste
