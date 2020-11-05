@@ -1,16 +1,12 @@
-const { age, graduation, date } = require('../utils')
+// const { age, graduation, date } = require('../utils')
+const Teacher = require("../models/Teacher")
 
 module.exports = {
     index(req, res) {
-        const teachers = data.teachers.map(function(teacher) {
-            return {
-                ...teacher,
-                services: teacher.services.split(","),
-
-            }
+        Teacher.all(function(teachers) {
+            return res.render('teachers/teachers', { teachers })
         })
 
-        return res.render('teachers/teachers', { teachers })
     },
     create(req, res) {
         return res.render('teachers/create-teacher')
