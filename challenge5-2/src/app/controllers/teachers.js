@@ -31,6 +31,7 @@ module.exports = {
             if (!teacher) return res.send("Teacher not found!")
 
             teacher.age = age(teacher.birth_date)
+            teacher.education_level = graduation(teacher.education_level)
             teacher.subjects_taught = teacher.subjects_taught.split(",")
 
             teacher.created_at = date(teacher.created_at).format
@@ -40,21 +41,13 @@ module.exports = {
 
     },
     edit(req, res) {
-        const { id } = req.params
+        Teacher.find(req.params.id, function(teacher) {
+            if (!teacher) return res.send("Teacher not found!")
 
-        const foundTeacher = data.teachers.find(function(teacher) {
-            return teacher.id == id
+            teacher.birth_date = date(teacher.birth_date).iso
+
+            return res.render('./teachers/edit', { teacher })
         })
-
-        if (!foundTeacher) return res.send('Teacher not found')
-
-        const teacher = {
-            ...foundTeacher,
-            birth: date(foundTeacher.birth)
-        }
-
-
-        return res.render('./teachers/edit', { teacher })
     },
     update(req, res) {
         const { id } = req.body
