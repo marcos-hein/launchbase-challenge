@@ -21,9 +21,9 @@
                             {{ teacher.name }}
                         </td>
                         <td>
-                            {% for service in teacher.services %}
-                                <span class="service">{{ service }}</span>
-                            {% endfor %}
+                            {# {% for subject_taught in teacher.subjects_taught %} #}
+                                <span class="service">{{ teacher.subjects_taught }}</span>
+                            {# {% endfor %} #}
                         </td>
                         <td><a href="/teachers/{{teacher.id}}">Ver</a></td>
                     </tr>
