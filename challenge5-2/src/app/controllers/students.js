@@ -1,15 +1,11 @@
-const { age, grade, date } = require('../utils')
+// const { age, grade, date } = require('../utils')
+const Student = require("../models/Student")
 
 module.exports = {
     index(req, res) {
-        const students = data.students.map(function(student) {
-            return {
-                ...student,
-                school_year: grade(student.school_year)
-            }
+        Student.all(function(students){
+            return res.render("students/students", { students })
         })
-    
-        return res.render('students/students', { students })
     },
     create(req, res) {
         return res.render('students/create-student')
@@ -85,7 +81,7 @@ module.exports = {
     
         return res.render('./students/edit', { student })
     },
-    update(req, res) {
+    put(req, res) {
         const { id } = req.body
     
         let index = 0
