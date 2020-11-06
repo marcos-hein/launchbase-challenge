@@ -1,5 +1,7 @@
 // const { age, grade, date } = require('../utils')
+const { grade, date } = require("../../lib/utils")
 const Student = require("../models/Student")
+const Teacher = require("../models/Teacher")
 
 module.exports = {
     index(req, res) {
@@ -24,24 +26,18 @@ module.exports = {
             return res.redirect(`/students/${student.id}`)    
         })
 
-
     },
     show(req, res) {
-        const { id } = req.params
-    
-        const foundstudent = data.students.find(function(student) {
-            return student.id == id
+        Student.find(req.params.id, function(student) {
+            if (!student) return res.send("Student not found!")
+
+            student.birth = date(student.birth_date).birthDay
+            student.school_year = grade(student.school_year)
+
+
+            return res.render('./students/show', { student })
         })
     
-        if (!foundstudent) return res.send('student not found!')
-    
-        const student = {
-            ...foundstudent,
-            birth: date(foundstudent.birth).birthDay,
-            school_year: grade(foundstudent.school_year)
-        }
-    
-        return res.render('./students/show', { student })
     },
     edit(req, res) {
         const { id } = req.params
