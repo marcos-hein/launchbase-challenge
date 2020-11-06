@@ -19,33 +19,12 @@ module.exports = {
                 return res.send('Please, fill all fields!')
             }
         }
-    
-        let { avatar_url, name, email, birth, school_year, study_hours} = req.body
-    
-        birth = Date.parse(birth)
-    
-        let id = 1
-        const lastStudent = data.students[data.students.length - 1]
-    
-        if (lastStudent) {
-            id = Number(lastStudent.id) + 1
-        }
-    
-        data.students.push({
-            id,
-            ...req.body,
-            birth
+
+        Student.create(req.body, function(student) {
+            return res.redirect(`/students/${student.id}`)    
         })
-    
-        fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err) {
-            if (err) {
-                return res.send('Write file error!')
-            }
-    
-            return res.redirect('/students')
-        })
-        
-        // return res.send(req.body)
+
+
     },
     show(req, res) {
         const { id } = req.params
