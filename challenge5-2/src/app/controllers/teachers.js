@@ -12,7 +12,6 @@ module.exports = {
         return res.render('teachers/create-teacher')
     },
     post(req, res) {
-
         const keys = Object.keys(req.body)
 
         for (key of keys) {
@@ -49,34 +48,19 @@ module.exports = {
             return res.render('./teachers/edit', { teacher })
         })
     },
-    update(req, res) {
-        const { id } = req.body
+    put(req, res) {
+        const keys = Object.keys(req.body)
 
-        let index = 0
-        
-        const foundTeacher = data.teachers.find(function(teacher, foundIndex) {
-            if (id == teacher.id) {
-                index = foundIndex
-                return true
+        for(key of keys) {
+            if (req.body[key] == "") {
+                return res.send("Please fill all fields!")
             }
-        })
-
-        if (!foundTeacher) return res.send('Teacher not found!')
-
-        const teacher = {
-            ...foundTeacher,
-            ...req.body,
-            birth: Date.parse(req.body.birth),
-            id: Number(id)
         }
 
-        data.teachers[index] = teacher
-
-        fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err) {
-            if(err) return res.send('Teacher not found!')
-
-            return res.redirect(`/teachers/${id}`)
+        Teacher.update(req.body, function() {
+            return res.redirect(`/teachers/${req.body.id}`)
         })
+
     },
     delete(req, res) {
         const { id } = req.body
