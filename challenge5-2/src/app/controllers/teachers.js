@@ -1,4 +1,4 @@
-// const { age, graduation, date } = require('../utils')
+const { age, graduation, date } = require('../../lib/utils')
 const Teacher = require("../models/Teacher")
 
 module.exports = {
@@ -20,30 +20,24 @@ module.exports = {
                 return res.send('Please, fill all fields!')
             }
         }
-        
+
          Teacher.create(req.body, function(teacher) {
              return res.redirect(`/teachers/${teacher.id}`)
          })
         
     },
     show(req, res) {
-        const { id } = req.params
+        Teacher.find(req.params.id, function(teacher) {
+            if (!teacher) return res.send("Teacher not found!")
 
-        const foundTeacher = data.teachers.find(function(teacher) {
-            return teacher.id == id
+            teacher.age = age(teacher.birth_date)
+            teacher.subjects_taught = teacher.subjects_taught.split(",")
+
+            teacher.created_at = date(teacher.created_at).format
+            
+            return res.render('./teachers/show', { teacher })
         })
 
-        if (!foundTeacher) return res.send('Teacher not found!')
-
-        const teacher = {
-            ...foundTeacher,
-            age: age(foundTeacher.birth),
-            schooling: graduation(foundTeacher.schooling),
-            services: foundTeacher.services.split(","),
-            created_at: new Intl.DateTimeFormat('pt-BR').format(foundTeacher.created_at)
-        }
-
-        return res.render('./teachers/show', { teacher })
     },
     edit(req, res) {
         const { id } = req.params
