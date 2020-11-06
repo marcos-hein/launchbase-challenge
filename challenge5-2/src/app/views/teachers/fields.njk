@@ -27,8 +27,8 @@
     <div>
         <input 
             type="date"
-            name="birth"
-            value="{{ teacher.birth }}"
+            name="birth_date"
+            value="{{ teacher.birth_date }}"
         >
     </div>
 </div>
@@ -36,12 +36,12 @@
 <div class="item">
     <div>Escolaridade</div>
     <div>
-        <select name="schooling">
+        <select name="education_level">
             <option value="0">Selecione uma opção</option>
-            <option value="1" {% if teacher.schooling == '1' %} selected{% endif %}>Ensino Médio Completo</option>
-            <option value="2" {% if teacher.schooling == '2' %} selected{% endif %}>Ensino Superior Completo</option>
-            <option value="3" {% if teacher.schooling == '3' %} selected{% endif %}>Mestrado</option>
-            <option value="4" {% if teacher.schooling == '4' %} selected{% endif %}>Doutorado</option>
+            <option value="1" {% if teacher.education_level == '1' %} selected{% endif %}>Ensino Médio Completo</option>
+            <option value="2" {% if teacher.education_level == '2' %} selected{% endif %}>Ensino Superior Completo</option>
+            <option value="3" {% if teacher.education_level == '3' %} selected{% endif %}>Mestrado</option>
+            <option value="4" {% if teacher.education_level == '4' %} selected{% endif %}>Doutorado</option>
         </select>
     </div>
 </div>
@@ -52,9 +52,9 @@
         <span>
             <input 
                 type="radio" 
-                name="type_of_class" 
+                name="class_type" 
                 value="Presencial"
-                {% if teacher.type_of_class == 'Presencial' %}
+                {% if teacher.class_type == 'Presencial' %}
                     checked
                 {% endif %}
                 > Presencial
@@ -62,9 +62,9 @@
         <span>
             <input 
                 type="radio" 
-                name="type_of_class" 
+                name="class_type" 
                 value="Á distância"
-                {% if teacher.type_of_class == 'Á distância' %}
+                {% if teacher.class_type == 'Á distância' %}
                     checked
                 {% endif %}
                 > À distância
@@ -77,9 +77,9 @@
     <div>
         <input
             type="text"
-            name="services"
+            name="subjects_taught"
             placeholder="Separe as matérias por vírgula"
-            value="{{ teacher.services }}"
+            value="{{ teacher.subjects_taught }}"
         >
     </div>
 </div>
