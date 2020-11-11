@@ -25,7 +25,7 @@ module.exports = {
             data.name,
             data.avatar_url,
             data.email,
-            date(data.birth).iso,
+            date(data.birth_date).iso,
             data.school_year,
             data.study_hours
         ]
@@ -44,6 +44,33 @@ module.exports = {
             if (err) throw `Database error! ${err}`
 
             callback(results.rows[0])
+        })
+    },
+    update(data, callback) {
+        const query = `
+            UPDATE students SET
+                name=($1),
+                avatar_url=($2),
+                email=($3),
+                birth_date=($4),
+                school_year=($5),
+                study_hours=($6)
+            WHERE id = $7
+        `
+        const values = [
+            data.name,
+            data.avatar_url,
+            data.email,
+            date(data.birth_date).iso,
+            data.school_year,
+            data.study_hours,
+            data.id
+        ]
+
+        db.query(query, values, function(err, results) {
+            if (err) throw `Database error! ${err}`
+
+            callback()
         })
     }
 }
