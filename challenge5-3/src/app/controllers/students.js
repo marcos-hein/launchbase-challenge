@@ -35,9 +35,11 @@ module.exports = {
 
             student.birth = date(student.birth_date).birthDay
             student.school_year = grade(student.school_year)
+            Student.teacherSelectOptions(function(options) {
+                return res.render('students/show', { student, teacherOptions: options })
+            })
 
-
-            return res.render('./students/show', { student })
+            // return res.render('./students/show', { student })
         })
     
     },
