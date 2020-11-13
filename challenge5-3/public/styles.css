@@ -346,3 +346,29 @@ td:last-child {
     width: 30px;
     height: 30px;
 }
+
+/* FILTERS */
+
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center; 
+}
+
+.table-container .header form input {
+    border: 1px solid #eeeeee;
+    padding: 4px 8px;
+    box-sizing: border-box;
+}
+
+.table-container .header form button {
+    width: 120px;
+    margin: 0;
+
+}
