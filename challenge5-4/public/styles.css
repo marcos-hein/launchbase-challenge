@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #2E5077;
+    --secondary-color: white;
+    --button-color: #FFA630;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-image: url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=841&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-color: var(--primary-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    /* background-color: var(--primary-color); */
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.add-user {
+    width: 20px;
+    height: 20px;
+}
+
+.links {
+    font-size: 22px;
+}
+
+.links a + a {
+    margin-left: 32px;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    position: relative;
+}
+
+.links a.active {
+    font-weight: bold;
+}
+
+.links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+}
+
+.links a:hover::after {
+    width: 100%;
+    transition: width 700ms ease-in-out;
+}
+
+/* === CARD === */
+
+.card {
+    background-color: #eeeeee;
+    width: 800px;
+    min-height: 400px;
+
+    margin: 45px auto;
+
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+
+    box-shadow: -3px -3px 30px 20px rgba(0, 0, 0, 0.4);
+
+    opacity: 0;
+    animation: up 200ms ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 400ms;
+}
+
+.show {
+    animation: toLeft 200ms ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 400ms;
+}
+
+.edit {
+    animation: down 200ms ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 400ms;
+}
+
+@keyframes up {
+    from {
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes toLeft {
+    from {
+        transform: translateX(35px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes down {
+    from {
+        transform: translateY(-35px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* === DETAILS === */
+
+.details {
+    padding: 32px;
+}
+
+.details .item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .item:first-child {
+    border: none;
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+    font-size: 14px;
+    line-height: 24px;
+    color: #777777;
+    letter-spacing: 0.7px;
+    font-weight: normal;
+}
+
+.details .item div:nth-child(2) {
+    color: #555555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.details h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+span.service {
+    padding: 8px 16px;
+    background-color: var(--button-color);
+    border-radius: 16px;
+    color: #3b3b3b;
+    margin-right: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+/* ===== FORM ===== */
+
+input {
+    width: 100%;
+    outline: none;
+    background-color: #eeeeee;
+    color: #555555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="radio"] {
+    width: initial;
+    margin-left: 8px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+select {
+    width: 100%;
+    background-color: #eeeeee;
+    color: #555555;
+    font-size: 18px;
+}
+
+/* button[type="submit"],
+a.button {
+    padding: 8px 32px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    margin-top: 32px;
+    width: 100%;
+    font-size: 16px;
+} */
+
+button[type="submit"],
+a.button {
+    background-color: #eeeeee;
+    color: var(--primary-color);
+    width: 100%;
+    padding: 8px 32px;
+    margin-top: 32px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button[type="submit"] {
+    float: left;
+    width: 40%;
+    margin-left: 24px;
+}
+
+a.button {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+}
+
+#form-delete button[type="submit"] {
+    background-color: white;
+    color: #ed4b6a;
+    border: 2px solid #ed4b6a;
+
+    box-sizing: border-box;
+    padding: 9px 16px;
+}
+
+/* button[type="submit"]:hover,
+.button_show_page a:hover {
+    cursor: pointer;
+    filter: brightness(85%);
+    transition: 400ms;
+} */
+
+button[type="submit"]:hover,
+a.button:hover {
+    /* background-color: var(--primary-color); */
+    color: white;
+    box-shadow: 0 0 40px 40px var(--primary-color) inset;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+
+#form-delete button[type="submit"]:hover {
+    color: white;
+    box-shadow: 0 0 40px 40px #ed4b6a inset;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+
+
+/* TEACHER LISTING */
+
+.table-container {
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.table-container table {
+    border-spacing: 0;
+}
+
+td, th {
+    padding: 12px;
+    border-bottom: 1px solid #d9d9d9;
+    text-align: center;
+}
+
+th {
+    text-transform: uppercase;
+    color: #777777;
+    font-size: 14px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    align-items: center;
+    text-align: initial;
+}
+
+tbody tr td:first-child span {
+    width: 44px;
+    height: 44px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -4px black;
+    border: 2px solid white;
+}
+
+tbody tr td:last-child a {
+    background-color: var(--primary-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+tbody tr td:last-child a:hover {
+    filter: brightness(0.8);
+    transition: 200ms;
+}
+
+td:last-child {
+    text-align: center;
+}
+
+.table-container img {
+    width: 30px;
+    height: 30px;
+}
+
+/* FILTERS */
+
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center; 
+}
+
+.table-container .header form input {
+    border: 1px solid #eeeeee;
+    padding: 4px 8px;
+    box-sizing: border-box;
+}
+
+.table-container .header form button {
+    width: 120px;
+    margin: 0;
+
+}
