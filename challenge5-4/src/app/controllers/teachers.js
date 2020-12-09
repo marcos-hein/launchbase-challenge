@@ -15,21 +15,15 @@ module.exports = {
             limit,
             offset,
             callback(teachers) {
-                return res.render('teachers/teachers', { teachers, filter })
+                const pagination = {
+                    total : Math.ceil(teachers[0].total / limit),
+                    page
+                }
+                return res.render('teachers/teachers', { teachers, pagination, filter })
             }
         }
 
         Teacher.paginate(params)
-
-        // if (filter) {
-        //     Teacher.findBy(filter, function(teachers) {
-        //         return res.render('teachers/teachers', { teachers, filter })
-        //     })
-        // } else {
-        //     Teacher.all(function(teachers) {
-        //         return res.render('teachers/teachers', { teachers })
-        //     })
-        // }
         
     },
     create(req, res) {
